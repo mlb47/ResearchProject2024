@@ -4,6 +4,17 @@ from datetime import datetime
 import messageReceiver
 from INA219 import INA219
 
+def PrintData(start_time, end_time, INA219Values):
+	print(f"Start Time: 	{start_time}\n")
+	print(f"End time:	{end_time}\n")
+	#print(f"Bus Voltage:  	{start_INA219Values['bus_voltage']:6.3f} V")
+	#print(f"Shunt Voltage:	{start_INA219Values['shunt_voltage']:9.6f} V")
+	#print(f"Current:       	{start_INA219Values['current']:9.6f} A")
+	#print(f"Power:         	{start_INA219Values['power']:6.3f} W")
+	#print(f"Percent:       	{start_INA219Values['percent']:3.1f}%")	
+	#print("")
+	
+
 def GetINA219Values(ina219):
 	bus_voltage = ina219.getBusVoltage_V()             
 	shunt_voltage = ina219.getShuntVoltage_mV() / 1000 
@@ -113,14 +124,7 @@ try:
 except OSError:
 	pass
 
-print(f"Start Time: 	{start_time}\n")
-print(f"End time: {end_time}\n")
-#print(f"Bus Voltage:  	{start_INA219Values['bus_voltage']:6.3f} V")
-#print(f"Shunt Voltage:	{start_INA219Values['shunt_voltage']:9.6f} V")
-#print(f"Current:       	{start_INA219Values['current']:9.6f} A")
-#print(f"Power:         	{start_INA219Values['power']:6.3f} W")
-#print(f"Percent:       	{start_INA219Values['percent']:3.1f}%")	
-#print("")
+PrintData(start_time, end_time, None) #Change None to INA219Values if Hat is on this Pi
 print("Disconnected")
 
 client.close()
