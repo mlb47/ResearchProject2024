@@ -60,13 +60,7 @@ try:
 	while True:
 		
 		data = client.recv(1024)
-
-		#print(f'At index  #{index}\n')
-		#print(f"Received: {data.decode('utf-8')}" + " @ {} \n".format(str(datetime.now())))
-		#print(f"Received: {message.decode('utf-8')}" + " @ {} \n".format(str(datetime.now())))
 		
-		
-		#print("Decrypting data... \n")
 		if(encryptionType == 1):
 			plaintext = data
 		if(encryptionType == 2):
