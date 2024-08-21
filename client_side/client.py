@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import socket
 import bluetooth
 import pandas as pd
 from datetime import datetime
