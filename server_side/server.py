@@ -1,4 +1,4 @@
-import socket
+#!/usr/bin/env python3
 import bluetooth
 from datetime import datetime 
 import messageReceiver
@@ -121,7 +121,7 @@ print(f"End time: {end_time}\n")
 #print(f"Power:         	{start_INA219Values['power']:6.3f} W")
 #print(f"Percent:       	{start_INA219Values['percent']:3.1f}%")	
 #print("")
-print("\nDisconnected")
+print("Disconnected")
 
 client.close()
 server.close()
